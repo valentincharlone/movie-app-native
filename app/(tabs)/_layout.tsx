@@ -40,7 +40,7 @@ export default function TabsLayout() {
         tabBarStyle: {
           backgroundColor: "#0F0D23",
           borderRadius: 50,
-          marginHorizontal: 20,
+          marginHorizontal: 15,
           marginBottom: 36,
           height: 52,
           position: "absolute",
