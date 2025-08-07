@@ -11,7 +11,7 @@ export default function MovieCard({
   release_date,
 }: Movie) {
   return (
-    <Link href={`/movie/${id}`} asChild>
+    <Link href={`/movie/${id}`} asChild >
       <TouchableOpacity className="w-[30%]">
         <Image
           source={{
