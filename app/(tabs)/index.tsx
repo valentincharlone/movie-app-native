@@ -70,7 +70,7 @@ export default function App() {
                 renderItem={({ item, index }) => (
                   <TrendingCard movie={item} index={index}/>
                 )}
-                keyExtractor={(item) => item.movie_id.toString()}
+                keyExtractor={(item) => item.movie_id?.toString()}
               />
 
               <Text className="text-lg text-white font-bold mt-5 mb-3">
@@ -79,7 +79,7 @@ export default function App() {
               <FlatList
                 data={movies}
                 renderItem={({ item }) => <MovieCard {...item} />}
-                keyExtractor={(item) => item.id.toString()}
+                keyExtractor={(item) => item.movie_id?.toString()}
                 numColumns={3}
                 columnWrapperStyle={{
                   justifyContent: "flex-start",

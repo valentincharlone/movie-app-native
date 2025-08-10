@@ -11,7 +11,13 @@ export default function MovieCard({
   release_date,
 }: Movie) {
   return (
-    <Link href={`/movie/${id}`} asChild >
+    <Link
+      href={{
+        pathname: "/movies/[id]",
+        params: { id: String(id) },
+      }}
+      asChild
+    >
       <TouchableOpacity className="w-[30%]">
         <Image
           source={{
@@ -23,7 +29,9 @@ export default function MovieCard({
           resizeMode="cover"
         />
 
-        <Text className="text-white text-sm font-bold mt-2" numberOfLines={1}>{title}</Text>
+        <Text className="text-white text-sm font-bold mt-2" numberOfLines={1}>
+          {title}
+        </Text>
 
         <View className="flex-row items-center justify-start gap-x-1">
           <Image source={icons.star} className="size-4" />
