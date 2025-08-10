@@ -22,16 +22,19 @@ export default function Search() {
   useEffect(() => {
     const getMoviesTimeoutId = setTimeout(async () => {
       if (searchQuery.trim()) {
-        refetchMovies();
-        if (movies?.length > 0 && movies?.[0]) {
-          await updateSearchCount(searchQuery, movies?.[0]);
-        }
+        await refetchMovies();
       } else {
         reset();
       }
     }, 500);
     return () => clearTimeout(getMoviesTimeoutId);
   }, [searchQuery]);
+
+  useEffect(() => {
+    if (movies?.length > 0 && movies?.[0]) {
+      updateSearchCount(searchQuery, movies?.[0]);
+    }
+  }, [searchQuery, movies]);
 
   return (
     <View className="flex-1 bg-primary">
