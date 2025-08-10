@@ -56,9 +56,7 @@ export default function App() {
                 <Text className="text-lg text-white font-bold mb-3">
                   Trending Movies
                 </Text>
-              
               </View>
-
             )}
             <>
               <FlatList
@@ -68,7 +66,7 @@ export default function App() {
                 className="mb-4 mt-3"
                 data={trendingMovies}
                 renderItem={({ item, index }) => (
-                  <TrendingCard movie={item} index={index}/>
+                  <TrendingCard movie={item} index={index} />
                 )}
                 keyExtractor={(item) => item.movie_id?.toString()}
               />
@@ -76,10 +74,11 @@ export default function App() {
               <Text className="text-lg text-white font-bold mt-5 mb-3">
                 Latest Movies
               </Text>
+
               <FlatList
                 data={movies}
                 renderItem={({ item }) => <MovieCard {...item} />}
-                keyExtractor={(item) => item.movie_id?.toString()}
+                keyExtractor={(item) => item.id?.toString()}
                 numColumns={3}
                 columnWrapperStyle={{
                   justifyContent: "flex-start",

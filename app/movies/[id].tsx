@@ -70,11 +70,21 @@ export default function MovieDetail() {
           <View className="flex flex-row justify-between w-1/2">
             <MovieInfo
               label="Budget"
-              value={`$${movie?.budget / 1_000_000} million`}
+              value={
+                movie?.budget != null
+                  ? `$${(movie.budget / 1_000_000).toFixed(1)} million`
+                  : "N/A"
+              }
             />
             <MovieInfo
               label="Revenue"
-              value={`$${Math.round(movie?.revenue) / 1_000_000} million`}
+              value={
+                movie?.revenue != null
+                  ? `$${(Math.round(movie.revenue) / 1_000_000).toFixed(
+                      1
+                    )} million`
+                  : "N/A"
+              }
             />
           </View>
 
